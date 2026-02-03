@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silver Jubilee | Questions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <strong>Silver Jubilee</strong>
+        <span>25 years of togetherness</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="questions.html" aria-current="page">Questions</a>
+        <a href="memories.html">Memories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero fade-in">
+      <h1>ನಿಮ್ಮ ಮಗನಿಂದ ಪ್ರೀತಿಯಿಂದ ಕೇಳುವ ಕೆಲವು ಪ್ರಶ್ನೆಗಳು 💌</h1>
+      <!-- <h2>Little prompts to remember, smile, and share together</h2> -->
+      <form class="card questions" id="anniversary-form">
+        <div class="question">
+          <label for="q1">ನಿಮ್ಮಿಬ್ಬರ ಸುಂದರ ಜೀವನಯಾನದ ಆರಂಭವಾದ ನಿಶ್ಚಿತಾರ್ಥದ ದಿನ ಯಾವುದು?</label>
+          <textarea id="q1" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <div class="question">
+          <label for="q2">ನಿಶ್ಚಿತಾರ್ಥ ಅಥವಾ ವಿವಾಹದ ನಂತರ ನೀವು ಮೊದಲ ಬಾರಿ ಒಟ್ಟಿಗೆ ಭೇಟಿ ನೀಡಿದ ಸ್ಥಳ ಯಾವುದು?</label>
+          <textarea id="q2" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <div class="question">
+          <label for="q3">ನಿಮ್ಮ ಜೀವನಯಾನದಲ್ಲಿ ಅತ್ಯಂತ ಮರೆಯಲಾಗದ, ಅಮೂಲ್ಯ ದಿನ ಯಾವುದು?</label>
+          <textarea id="q3" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <div class="question">
+          <label for="q4">ನಿಮ್ಮ ದೃಷ್ಟಿಯಲ್ಲಿ ಮಗ ಅಥವಾ ಮಗಳು — ಯಾರು ನಿಮ್ಮಂತೆಯೇ ಹೆಚ್ಚು ಇದ್ದಾರೆ? ಏಕೆ?</label>
+          <textarea id="q4" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <div class="question">
+          <label for="q5">ನಿಮ್ಮಿಬ್ಬರು ಪರಸ್ಪರ ಕೊಟ್ಟ ಮೊದಲ ಉಡುಗೊರೆ ಯಾವುದು?</label>
+          <textarea id="q5" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <div class="question">
+          <label for="q6">ನಿಮ್ಮಿಬ್ಬರು ಒಟ್ಟಿಗೆ ನೋಡಿದ ಮೊದಲ ಸಿನಿಮಾ ಯಾವುದು? ಆ ದಿನದ ನೆನಪು ಹೇಗಿದೆ?</label>
+          <textarea id="q6" rows="3" placeholder="ನಿಮ್ಮ ನೆನಪನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ…"></textarea>
+        </div>
+        <button type="button" class="cta-button" id="whatsapp-send">
+          Send Answers on WhatsApp
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="questions.html" aria-current="page">Questions</a>
+      <a href="memories.html">Memories</a>
+    </nav>
+    Made with ❤️ by your son on your Silver Jubilee
+  </footer>
+
+  <script>
+    (function () {
+      var button = document.getElementById("whatsapp-send");
+      var questions = [
+        "What is your happiest memory together?",
+        "What advice would you give me about love?",
+        "What makes your bond strong even after 25 years?",
+        "What is one small habit that makes you smile every day?",
+        "Which moment made you feel most proud of our family?",
+        "If you could relive one day from your journey, which would it be?"
+      ];
+
+      button.addEventListener("click", function () {
+        var answers = [];
+        for (var i = 1; i <= questions.length; i += 1) {
+          var value = document.getElementById("q" + i).value.trim();
+          answers.push("Q" + i + ": " + questions[i - 1]);
+          answers.push("A" + i + ": " + (value || "(no answer)"));
+          answers.push("");
+        }
+
+        var message = "Amma & Appa - 25th Anniversary Answers\n\n" + answers.join("\n");
+        var url = "https://wa.me/9591362146?text=" + encodeURIComponent(message);
+        window.open(url, "_blank");
+      });
+    })();
+  </script>
+</body>
+</html>
